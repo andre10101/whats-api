@@ -204,6 +204,7 @@ class Client {
             return true;
 
         } catch (e) {
+            console.log("err", e);
             return false;
         }
     }

@@ -96,7 +96,7 @@ class Client {
         try {
 
 
-            this.options.puppeteer.headless =  false;
+            this.options.puppeteer.headless =  true;
             this.options.puppeteer.args= ['--no-sandbox'];
             console.log("this.options.puppeteer", this.options.puppeteer)
             const browser = await puppeteer.launch(this.options.puppeteer);

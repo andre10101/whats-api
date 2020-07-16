@@ -44,7 +44,7 @@ class Client {
                 }
                 
                 if (result && result.length) {
-                    // console.log("Result: " + JSON.stringify(result));
+                    // console.log("Result: " + ƒJSON.stringify(result));
                     let aux = JSON.stringify(result);
                     token = JSON.parse(result[0].extra);
                 }
@@ -96,7 +96,7 @@ class Client {
         try {
 
 
-            this.options.puppeteer.headless =  true;
+            this.options.puppeteer.headless =  false;
             this.options.puppeteer.args= ['--no-sandbox'];
             console.log("this.options.puppeteer", this.options.puppeteer)
             const browser = await puppeteer.launch(this.options.puppeteer);
@@ -121,13 +121,17 @@ class Client {
                     }, session_number);
             }
 
+
+            console.log("antes do page goto")
             await page.goto(WhatsWebURL, {
                 waitUntil: 'load',
                 timeout: 0,
             });
 
+            console.log("dps do page goto")
             const KEEP_PHONE_CONNECTED_IMG_SELECTOR = '[data-asset-intro-image-light="true"]';
 
+            
             if (session_number) {
                 console.log("aq2")
                 // Check if session restore was successfull 
@@ -149,7 +153,7 @@ class Client {
                 }
 
             } else {
-
+                console.log("aq22")
                 const getQrCode = async () => {
                     try {
                         // Check if retry button is present

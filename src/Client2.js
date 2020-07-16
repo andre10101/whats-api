@@ -95,6 +95,8 @@ class Client {
     async initialize(numero) {
         try {
 
+            console.log("this.options.puppeteer", this.options.puppeteer)
+
             const browser = await puppeteer.launch(this.options.puppeteer);
             const page = (await browser.pages())[0];
             page.setUserAgent(UserAgent);

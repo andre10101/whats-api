@@ -138,6 +138,7 @@ class Client {
                 try {
                     await page.waitForSelector(KEEP_PHONE_CONNECTED_IMG_SELECTOR, { timeout: this.options.authTimeoutMs });
                 } catch (err) {
+                    console.log("err dentro do ses", err)
                     if (err.name === 'TimeoutError') {
 
                         this.failure();
